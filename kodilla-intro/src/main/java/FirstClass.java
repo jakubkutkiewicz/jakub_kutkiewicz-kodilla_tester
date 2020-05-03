@@ -1,5 +1,15 @@
-public class FirstClass {
+import static java.lang.Integer.sum;
+
+public class FirstClass<result> {
+    private static String sayHello() {
+        String text = "Hello from FirstClass!";
+        return text;
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello from FirstClass!");
+        String example = sayHello();
+        System.out.println(example);
     }
 }
+
+
