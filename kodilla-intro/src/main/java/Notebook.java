@@ -11,6 +11,7 @@ int year;
     this.weight2 = weight2;
     this.year = year;
 
+
     }
     public void checkPrice() {
         if (this.price < 600 || this.year < 2005) {
@@ -21,8 +22,6 @@ int year;
             System.out.println("This notebook is expensive but is like brand new");
         }
             }
-
-
             public void checkWeight2() {
         if (this.weight2 < 1000) {
             System.out.println("this notebook is lite");
