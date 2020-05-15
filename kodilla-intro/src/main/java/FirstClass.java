@@ -1,15 +1,25 @@
-import static java.lang.Integer.sum;
 
-public class FirstClass<result> {
-    private static String sayHello() {
-        String text = "Hello from FirstClass!";
-        return text;
+public class FirstClass {
+    public static void main(String[] args) {{
+        Notebook notebook = new Notebook("600g",600, 600, 2000);
+        System.out.println(notebook.weight + " " + notebook.price + " YEAR " +notebook.year );
+        notebook.checkPrice();
+        notebook.checkWeight2();
+
+        Notebook heavyNotebook = new Notebook("2200g", 800, 2200, 2010);
+        System.out.println(heavyNotebook.weight +" "+ heavyNotebook.price + " YEAR " +heavyNotebook.year );
+        heavyNotebook.checkPrice();
+        heavyNotebook.checkWeight2();
+
+        Notebook oldNotebook = new Notebook("1200g", 2000, 1200, 2020);
+        System.out.println(oldNotebook.weight + " " + oldNotebook.price + " YEAR "+ oldNotebook.year );
+        oldNotebook.checkPrice();
+        oldNotebook.checkWeight2();
+
+
+
     }
 
-    public static void main(String[] args) {
-        String example = sayHello();
-        System.out.println(example);
-    }
-}
 
+}}
 
