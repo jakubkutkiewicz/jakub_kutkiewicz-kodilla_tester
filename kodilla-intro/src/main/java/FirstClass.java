@@ -1,11 +1,11 @@
 
 public class FirstClass {
     public static void main(String[] args) {{
-        Notebook notebook = new Notebook("600g",600, 600, 2000,2);
-        System.out.println(notebook.weight + " " + notebook.price + " YEAR " +notebook.year+ notebook.average);
+        Notebook notebook = new Notebook("600g",600, 600, 2000);
+        System.out.println(notebook.weight + " " + notebook.price + " YEAR " +notebook.year);
         notebook.checkPrice();
         notebook.checkWeight2();
-        notebook.average();
+
 
         Notebook heavyNotebook = new Notebook("2200g", 800, 2200, 2010);
         System.out.println(heavyNotebook.weight +" "+ heavyNotebook.price + " YEAR " +heavyNotebook.year );
