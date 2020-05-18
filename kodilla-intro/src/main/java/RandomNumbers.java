@@ -1,4 +1,4 @@
-import java.util.Random;        //zaimportowanie możliwości zawartych w klasie Random
+import java.util.Random;
 
 public class RandomNumbers extends Object{
 

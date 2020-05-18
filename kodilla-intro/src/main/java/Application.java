@@ -1,10 +1,10 @@
-public class zmianakodu {
+public class Application {
 
     String name;
     double age;
     double heigt;
 
-    public zmianakodu (String name, double age, double heigt) {
+    public Application (String name, double age, double heigt) {
         this.name = name;
         this.age = age;
         this.heigt = heigt;
@@ -24,7 +24,7 @@ public class zmianakodu {
 
     public static void main(String[] args) {
 
-        zmianakodu adam = new zmianakodu("Adam", 20.5, 178);
+        Application adam = new Application("Adam", 20.5, 178);
         System.out.println(adam.name + adam.heigt + adam.age);
         adam.Application();
 
