@@ -28,11 +28,11 @@ public class User {
         User[] users = {Anna, Jakub, Joanna, Norbi};
 
 
-            int sum = 0;
-            for (int i = 0; i < users.length; i++)
-            {
-                sum += users[i].getYear();
-            }
+        int sum = 0;
+        for (int i = 0; i < users.length; i++)
+        {
+            sum += users[i].getYear();
+        }
 
              double average =0;
             average = sum/ users.length;
