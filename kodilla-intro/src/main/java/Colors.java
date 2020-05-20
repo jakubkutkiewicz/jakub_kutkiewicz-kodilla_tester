@@ -8,7 +8,7 @@ public class Colors {
         Scanner scanner = new Scanner(System.in);
         System.out.println("enter first letter of color");
         String color = scanner.nextLine();
-        while (true){
+
 
             String calc = scanner.nextLine().trim().toUpperCase();
             switch (calc) {
@@ -27,7 +27,7 @@ public class Colors {
             }}}
 
 
-}
+
 
 
 
