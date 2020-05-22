@@ -10,7 +10,7 @@ public class Laptop extends OperatingSystem{
 
     public Laptop(int year) {
         super(year);
-        System.out.println(1999);
+
     }
 }
 
