@@ -7,4 +7,13 @@ public class Laptop extends OperatingSystem{
         System.out.println(2004);
     }
 
+    @Override
+    public void turnOn() {
+        super.turnOn();
+    }
+
+    @Override
+    public void turnOff() {
+        super.turnOff();
+    }
 }
