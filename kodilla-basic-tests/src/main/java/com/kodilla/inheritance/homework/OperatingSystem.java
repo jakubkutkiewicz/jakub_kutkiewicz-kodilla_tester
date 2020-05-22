@@ -10,7 +10,7 @@ private double version;
     public OperatingSystem (int year){
 this.year = year;
 
-        System.out.println("rok systemu operacyjnego : " );
+        System.out.println("rok systemu operacyjnego : " + year);
     }
 
 
