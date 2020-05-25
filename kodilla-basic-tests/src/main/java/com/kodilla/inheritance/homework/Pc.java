@@ -10,9 +10,10 @@ public class Pc extends OperatingSystem {
     public void turnOff() {
         System.out.println("system is on");
     }
+
     public Pc(int year) {
         super(year);
-        System.out.println(2010);
+
     }
 
 }

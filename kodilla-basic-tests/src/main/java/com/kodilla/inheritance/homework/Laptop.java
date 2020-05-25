@@ -1,9 +1,8 @@
 package com.kodilla.inheritance.homework;
 
-public class Laptop extends OperatingSystem{
+public class Laptop extends OperatingSystem {
 
 
-    @Override
     public void turnOn() {
         System.out.println("system is turn off");
     }
