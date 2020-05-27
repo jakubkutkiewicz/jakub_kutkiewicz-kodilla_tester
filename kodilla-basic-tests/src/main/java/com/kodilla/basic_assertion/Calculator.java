@@ -16,6 +16,10 @@ public class Calculator {
     int a;
     int b;
     public double power = Math.pow(a,b);
+
+    public int sum(int a, int b) {
+        return a - b;
     }
+}
 
 

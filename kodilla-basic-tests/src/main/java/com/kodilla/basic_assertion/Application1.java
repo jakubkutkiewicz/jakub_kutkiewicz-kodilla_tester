@@ -8,14 +8,14 @@ public class Application1 {
         int b = 1;
 
         int sumResult = calculator.dodawanie(a, b);
-        boolean correct = ResultChecker.assertEquals(11, sumResult);
+        boolean correct = ResultChecker.assertEquals(2, sumResult);
         if (correct) {
             System.out.println("Metoda sum działa poprawnie dla liczb " + a + " i " + b);
         } else {
             System.out.println("Metoda sum nie działa poprawnie dla liczb " + a + " i " + b);
         }
         int minusResult = calculator.odejmowanie(a, b);
-        boolean correctminus = ResultChecker.assertEquals(1, minusResult);
+        boolean correctminus = ResultChecker.assertEquals(0, minusResult);
         if (correctminus) {
             System.out.println("metoda minusResult działa poprawnie");
         } else {
