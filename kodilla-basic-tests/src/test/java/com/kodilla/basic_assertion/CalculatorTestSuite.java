@@ -23,7 +23,7 @@ public class CalculatorTestSuite {
         int b = 0;
 
         int sumResult = calculator.dodawanie(a, b);
-        assertEquals(4, sumResult);
+        assertEquals(0, sumResult);
 
 
         int minusResult = calculator.odejmowanie(a, b);
