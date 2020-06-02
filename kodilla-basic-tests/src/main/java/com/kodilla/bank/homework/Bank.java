@@ -1,122 +1,133 @@
 package com.kodilla.bank.homework;
 
 public class Bank {
-    private CashMachine ATM1;
-    private CashMachine ATM2;
-    private CashMachine ATM3;
+
+    public CashMachine[] cm;
+    public int size;
+
 
     public Bank() {
-        CashMachine cashMachine1 = new CashMachine();
-        CashMachine cashMachine2 = new CashMachine();
-        CashMachine cashMachine3 = new CashMachine();
-
-        this.ATM1= cashMachine1;
-        this.ATM2= cashMachine2;
-        this.ATM3= cashMachine3;
-    }
-
-    public void ADDATM1(int cash) { this.ATM1.addTransaction(cash);}
-    public void ADDATM2(int cash) {
-        this.ATM2.addTransaction(cash);
-    }
-    public void ADDATM3(int cash) {
-        this.ATM3.addTransaction(cash);
-    }
-
-    public double totalBalance() {
-        return this.ATM1.getBalance() + this.ATM2.getBalance() + this.ATM3.getBalance();
-    }
-    //wartość transakcji związanych z wypłatą
-    public double withdrawATM1() {
-        return this.ATM1.getWithdrawal();
-    }
-
-    public double withdrawATM2() {
-        return this.ATM2.getWithdrawal();
-    }
-
-    public double withdrawATM3() {
-        return this.ATM3.getWithdrawal();
-    }
-
-    //iloścć wszystkich transakcji wypłaty
-    public int totalWithdrawalsATM1() { return this.ATM1.getNumberOfWithdrawals(); }
-    public int totalWithdrawalsATM2() { return this.ATM2.getNumberOfWithdrawals(); }
-    public int totalWithdrawalsATM3() { return this.ATM3.getNumberOfWithdrawals(); }
-
-
-    public int getNumWithdrawals() {
-        int totalTransaction = totalWithdrawalsATM1() +
-                totalWithdrawalsATM2() +
-                totalWithdrawalsATM3();
-        return totalTransaction;
+        this.cm = new CashMachine[0];
 
     }
-    //srednia wypłat
-    public double getAverageAllWithdrawals () {
-        double average = withdrawATM1() +
-                withdrawATM2() +
-                withdrawATM3();
 
-        if (getNumWithdrawals() == 0) {
-            return 0;
-        } else {
-            return average / getNumWithdrawals();
-        }
+    public void addCashMachine(CashMachine cashMachine) {
+        this.size++;
+        CashMachine[] tempTab = new CashMachine[this.size];
+        System.arraycopy(cm, 0, tempTab, 0, cm.length);
+        tempTab[this.size - 1] = cashMachine;
+        this.cm = tempTab;
     }
-//wpłaty
 
-    public double depositATM1() {
-        return this.ATM1.getDeposits();
-    }
-    public double depositATM2() {
-        return this.ATM2.getDeposits();
-    }
-    public double depositATM3() {
-        return this.ATM3.getDeposits();
-    }
-    //ilość wpłat
-    public double numDepositATM1() {return this.ATM1.getNumberOfDeposits();}
-    public double numDepositATM2() { return this.ATM2.getNumberOfDeposits(); }
-    public double numDepositATM3() { return this.ATM3.getNumberOfDeposits(); }
-
-    public double totalNumDeposits() {
-        double totalDeposits = numDepositATM1()+numDepositATM2()+numDepositATM3();
-        return totalDeposits;
-
-    }
-    public double getAverageAllDeposits() {
-
-        double average = depositATM1() + depositATM2() +
-                depositATM3();
-
-        if(totalNumDeposits() == 0) {
-            return 0;
-        } else {
-            return average / totalNumDeposits();
+    public void addCmTransaction(int cmIndex, int value) {
+        if (value != 0) {
+            this.cm[cmIndex].addTransaction(value);
         }
     }
 
-    public static void main(String[] args) {
+    public double getInCashCm(CashMachine cm) {
+        int[] cmTransactions = cm.getTransactions();
+        double sumInCm = 0;
+        for (int cm1t : cmTransactions) {
+            if (cm1t > 0)
+                sumInCm = sumInCm + cm1t;
+        }
+        return sumInCm;
+    }
 
+    public int getOutCashCm(CashMachine cm) {
+        int[] cmTransactions = cm.getTransactions();
+        int sumOutCm = 0;
+        for (int cm1t : cmTransactions) {
+            if (cm1t < 0)
+                sumOutCm = sumOutCm + cm1t;
+        }
+        return sumOutCm;
+    }
+
+    public int getInCountCm(CashMachine cm) {
+        int[] cm1Transactions = cm.getTransactions();
+        int countInCm1 = 0;
+        for (int cm1t : cm1Transactions) {
+            if (cm1t > 0)
+                countInCm1++;
+        }
+        return countInCm1;
+    }
+
+    public int getOutCountCm(CashMachine cm) {
+        int[] cm1Transactions = cm.getTransactions();
+        int countOutCm = 0;
+        for (int cm1t : cm1Transactions) {
+            if (cm1t < 0)
+                countOutCm++;
+        }
+        return countOutCm;
+    }
+
+    public double getInAvg() {
+        double inCash = 0.0;
+        double inCount = 0.0;
         Bank bank = new Bank();
+        for (CashMachine cm : cm
+        ) {
+            inCount = inCount + bank.getInCountCm(cm);
+        }
 
-        bank.ADDATM1(100);
-        bank.ADDATM2(-100);
-        bank.ADDATM3(100);
+        for (CashMachine cmCash : cm
+        ) {
+            inCash = inCash + bank.getInCashCm(cmCash);
+        }
+        if (inCount != 0)
+            return inCash / inCount;
+        else
+            return 0.0;
+    }
 
-        bank.ADDATM3(200);
-        bank.ADDATM2(-50);
-        bank.ADDATM1(100);
+    public double getOutAvg() {
+        double outCash = 0.0;
+        double outCount = 0.0;
+        Bank bank = new Bank();
+        for (CashMachine cm : cm
+        ) {
+            outCount = outCount + bank.getOutCountCm(cm);
+        }
 
-        System.out.println(bank.totalBalance()+" saldo łaczne");
+        for (CashMachine cmCash : cm
+        ) {
+            outCash = outCash + bank.getOutCashCm(cmCash);
+        }
+        if (outCount != 0)
+            return outCash / outCount;
+        else
+            return 0.0;
+    }
 
-        System.out.println(bank.totalNumDeposits()+" liczba depozytów");
+    public double getTotalSaldo() {
+        double totalSaldo = 0.0;
+        for (CashMachine cmSaldo : cm) {
+            totalSaldo = totalSaldo + cmSaldo.getSaldo();
+        }
+        return totalSaldo;
+    }
 
-        System.out.println(bank.getAverageAllDeposits()+" średnia depozytów");
+    public double getInAll() {
+        Bank bank = new Bank();
+        double inAll = 0.0;
+        for (CashMachine cm : cm
+        ) {
+            inAll = inAll + bank.getInCountCm(cm);
+        }
+        return inAll;
+    }
 
-        System.out.println(bank.getNumWithdrawals()+" liczba wypłat");
-
-        System.out.println(bank.getAverageAllWithdrawals()+ " srednia wypłat");
-
-    }}
+    public double getOutAll() {
+        Bank bank = new Bank ();
+        double outAll = 0.0;
+        for (CashMachine cm : cm
+        ) {
+            outAll = outAll + bank.getOutCountCm(cm);
+        }
+        return outAll;
+    }
+}
