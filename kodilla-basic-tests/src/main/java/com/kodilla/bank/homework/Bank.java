@@ -6,28 +6,26 @@ public class Bank {
     private CashMachine ATM3;
 
     public Bank() {
-        this.ATM1 = new CashMachine();
-        this.ATM2 = new CashMachine();
-        this.ATM3 = new CashMachine();
+        CashMachine cashMachine1 = new CashMachine();
+        CashMachine cashMachine2 = new CashMachine();
+        CashMachine cashMachine3 = new CashMachine();
+
+        this.ATM1= cashMachine1;
+        this.ATM2= cashMachine2;
+        this.ATM3= cashMachine3;
     }
 
-    public void ADDATM1(int cash) {
-        this.ATM1.addTransaction(cash);
-    }
-
+    public void ADDATM1(int cash) { this.ATM1.addTransaction(cash);}
     public void ADDATM2(int cash) {
         this.ATM2.addTransaction(cash);
     }
-
     public void ADDATM3(int cash) {
         this.ATM3.addTransaction(cash);
     }
 
     public double totalBalance() {
         return this.ATM1.getBalance() + this.ATM2.getBalance() + this.ATM3.getBalance();
-
     }
-
     //wartość transakcji związanych z wypłatą
     public double withdrawATM1() {
         return this.ATM1.getWithdrawal();
@@ -53,19 +51,19 @@ public class Bank {
                 totalWithdrawalsATM3();
         return totalTransaction;
 
-        }
-        //srednia wypłat
-        public double getAverageAllWithdrawals () {
-            double average = withdrawATM1() +
-                    withdrawATM2() +
-                    withdrawATM3();
+    }
+    //srednia wypłat
+    public double getAverageAllWithdrawals () {
+        double average = withdrawATM1() +
+                withdrawATM2() +
+                withdrawATM3();
 
-            if (getNumWithdrawals() == 0) {
-                return 0;
-            } else {
-                return average / getNumWithdrawals();
-            }
+        if (getNumWithdrawals() == 0) {
+            return 0;
+        } else {
+            return average / getNumWithdrawals();
         }
+    }
 //wpłaty
 
     public double depositATM1() {
@@ -90,7 +88,7 @@ public class Bank {
     public double getAverageAllDeposits() {
 
         double average = depositATM1() + depositATM2() +
-               depositATM3();
+                depositATM3();
 
         if(totalNumDeposits() == 0) {
             return 0;
