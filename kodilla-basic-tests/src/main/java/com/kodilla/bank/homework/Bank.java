@@ -19,9 +19,9 @@ public class Bank {
         this.cm = tempTab;
     }
 
-    public void addCmTransaction(int cmIndex, int value) {
+    public void addCmTransaction(int size, int value) {
         if (value != 0) {
-            this.cm[cmIndex].addTransaction(value);
+            this.cm[size].addTransaction(value);
         }
     }
 
