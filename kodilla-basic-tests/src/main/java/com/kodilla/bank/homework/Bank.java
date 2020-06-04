@@ -25,12 +25,12 @@ public class Bank {
         }
     }
 
-    public double getInCashCm(CashMachine cm) {
-        int[] cmTransactions = cm.getTransactions();
+    public double getInCashCm() {   //tak pozostałe
+
         double sumInCm = 0;
-        for (int cm1t : cmTransactions) {
-            if (cm1t > 0)
-                sumInCm = sumInCm + cm1t;
+        for (CashMachine machinetemp : cm) {
+
+            sumInCm = sumInCm + machinetemp.sumTransactionIN();
         }
         return sumInCm;
     }
@@ -103,13 +103,15 @@ public class Bank {
             return 0.0;
     }
 
-    public double getTotalSaldo() {
-        double totalSaldo = 0.0;
+    public int getBalance() {
+        int balance = 0;
         for (CashMachine cmSaldo : cm) {
-            totalSaldo = totalSaldo + cmSaldo.getSaldo();
+            balance += cmSaldo.getBalance();
         }
-        return totalSaldo;
+
+        return balance;
     }
+
 
     public double getInAll() {
         Bank bank = new Bank();
@@ -122,7 +124,7 @@ public class Bank {
     }
 
     public double getOutAll() {
-        Bank bank = new Bank ();
+        Bank bank = new Bank();
         double outAll = 0.0;
         for (CashMachine cm : cm
         ) {

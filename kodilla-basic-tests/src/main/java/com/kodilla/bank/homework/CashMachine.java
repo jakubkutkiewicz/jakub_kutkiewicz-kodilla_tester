@@ -53,5 +53,17 @@ public class CashMachine {
         }
         return sumOut/this.transactions.length;
     }
+    public int getBalance() {
+        if (this.transactions.length == 0) {
+            return 0;
+        }
+        int balance = 0;
+        for (int i = 0; i < this.transactions.length; i++) {
+            balance += this.transactions[i];
+        }
+        return balance;
+    }
+        public int sumTransactionIN(){  /// napisać metode
+            return 0;
 
-}
+}}
