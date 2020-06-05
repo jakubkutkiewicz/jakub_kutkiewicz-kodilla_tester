@@ -35,34 +35,35 @@ public class Bank {
         return sumInCm;
     }
 
-    public int getOutCashCm(CashMachine cm) {
-        int[] cmTransactions = cm.getTransactions();
+    public int getOutCashCm() {
         int sumOutCm = 0;
-        for (int cm1t : cmTransactions) {
-            if (cm1t < 0)
-                sumOutCm = sumOutCm + cm1t;
+        for (CashMachine machinetemp :cm) {
+
+                sumOutCm = sumOutCm + machinetemp.sumTransactionOUT();
         }
         return sumOutCm;
     }
 
-    public int getInCountCm(CashMachine cm) {
-        int[] cm1Transactions = cm.getTransactions();
-        int countInCm1 = 0;
-        for (int cm1t : cm1Transactions) {
-            if (cm1t > 0)
-                countInCm1++;
+    public int getInCountCm() {
+        int count = 0;
+        for (int i = 0; i < 5; i++ ) {
+            CashMachine temp =cm[i];
+            if (temp != null) {
+                count += temp.sumTransactionIN();
+            }
         }
-        return countInCm1;
+        return count;
     }
 
-    public int getOutCountCm(CashMachine cm) {
-        int[] cm1Transactions = cm.getTransactions();
-        int countOutCm = 0;
-        for (int cm1t : cm1Transactions) {
-            if (cm1t < 0)
-                countOutCm++;
+    public int getOutCountCm() {
+        int count = 0;
+        for (int i = 0; i <5; i++) {
+            CashMachine temp = cm[i];
+            if (temp != null) {
+                count += temp.sumTransactionOUT();
+            }
         }
-        return countOutCm;
+        return count;
     }
 
     public double getInAvg() {
@@ -71,12 +72,12 @@ public class Bank {
         Bank bank = new Bank();
         for (CashMachine cm : cm
         ) {
-            inCount = inCount + bank.getInCountCm(cm);
+            inCount = inCount + bank.getInCountCm();
         }
 
         for (CashMachine cmCash : cm
         ) {
-            inCash = inCash + bank.getInCashCm(cmCash);
+            inCash = inCash + bank.getInCashCm();
         }
         if (inCount != 0)
             return inCash / inCount;
@@ -90,12 +91,12 @@ public class Bank {
         Bank bank = new Bank();
         for (CashMachine cm : cm
         ) {
-            outCount = outCount + bank.getOutCountCm(cm);
+            outCount = outCount + bank.getOutCountCm();
         }
 
         for (CashMachine cmCash : cm
         ) {
-            outCash = outCash + bank.getOutCashCm(cmCash);
+            outCash = outCash + bank.getOutCashCm();
         }
         if (outCount != 0)
             return outCash / outCount;
@@ -118,7 +119,7 @@ public class Bank {
         double inAll = 0.0;
         for (CashMachine cm : cm
         ) {
-            inAll = inAll + bank.getInCountCm(cm);
+            inAll = inAll + bank.getInCountCm();
         }
         return inAll;
     }
@@ -128,7 +129,7 @@ public class Bank {
         double outAll = 0.0;
         for (CashMachine cm : cm
         ) {
-            outAll = outAll + bank.getOutCountCm(cm);
+            outAll = outAll + bank.getOutCountCm();
         }
         return outAll;
     }

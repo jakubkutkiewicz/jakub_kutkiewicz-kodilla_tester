@@ -64,6 +64,28 @@ public class CashMachine {
         return balance;
     }
         public int sumTransactionIN(){  /// napisać metode
+            if (this.transactions.length == 0) {
+                return 0;
+            }
+            int payment = 0;
+            for (int i = 0; i < this.transactions.length; i++) {
+                if (this.transactions[i] > 0) {
+                    payment += this.transactions[i];
+                }
+            }
+            return payment;
+        }
+    public int sumTransactionOUT() {
+        if (this.transactions.length == 0) {
             return 0;
+        }
+        int withdraw = 0;
+        for (int i = 0; i < this.transactions.length; i++) {
+            if (this.transactions[i] < 0) {
+                withdraw -= this.transactions[i];
 
-}}
+            }
+        }
+        return withdraw;
+    }
+}
