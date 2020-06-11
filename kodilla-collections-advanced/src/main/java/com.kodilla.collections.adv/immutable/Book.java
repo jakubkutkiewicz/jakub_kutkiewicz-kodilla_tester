@@ -1,6 +1,6 @@
 package com.kodilla.collections.adv.immutable;
 
-public final class Book {
+public class Book {
     protected final String author;
     protected final String title;
 
@@ -13,8 +13,8 @@ public final class Book {
         return title;
     }
 
-    public Book (String author, String title){
-this.author =author;
-this.title= title;
+    public Book(String author, String title) {
+        this.author = author;
+        this.title = title;
     }
 }
