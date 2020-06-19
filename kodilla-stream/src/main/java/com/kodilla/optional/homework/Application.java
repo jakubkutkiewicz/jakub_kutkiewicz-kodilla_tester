@@ -15,7 +15,7 @@ public class Application {
 
         for (Student student : students)
             System.out.println(
-                    Optional.ofNullable(student.getTeacher()).map(teacher -> teacher.getName()).orElse("<undefined>"));
+                    Optional.ofNullable(student.getTeacher()).map(u -> u.getName()).orElse("<undefined>"));
     }
 }
 
