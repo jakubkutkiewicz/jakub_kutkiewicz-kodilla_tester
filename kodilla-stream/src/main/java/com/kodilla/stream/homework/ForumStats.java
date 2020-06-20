@@ -19,8 +19,8 @@ public class ForumStats {
                 .filter(y -> y.getAge() <= 40)
                 .map(u -> u.getNumberOfPosts())
                 .mapToInt(n -> n)
-                .average()
-                .getAsDouble();
+                .max()
+                .getAsInt();
         System.out.println(avglow40);
     }
 }
