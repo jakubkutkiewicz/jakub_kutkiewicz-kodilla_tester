@@ -1,8 +1,6 @@
 package com.kodilla.exception.homework;
 
-import javax.print.attribute.standard.OrientationRequested;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 
