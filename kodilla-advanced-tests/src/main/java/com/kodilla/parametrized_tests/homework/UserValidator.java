@@ -15,6 +15,9 @@ public class UserValidator {
             Matcher matcher = pattern.matcher(email);
             return matcher.matches();
         }
-        return false;
+            return false;
+
+
+        }
+
     }
-}
