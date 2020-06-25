@@ -5,7 +5,7 @@ public class Person {
     private double heightInMeters;
     private double weightInKilogram;
 
-    public Person(double heightInMeters, double weightInKilogram,String status) {
+    public Person(double heightInMeters, double weightInKilogram) {
         this.heightInMeters = heightInMeters;
         this.weightInKilogram = weightInKilogram;
     }
