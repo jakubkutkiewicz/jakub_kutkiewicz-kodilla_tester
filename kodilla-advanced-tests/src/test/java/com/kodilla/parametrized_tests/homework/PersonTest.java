@@ -11,7 +11,7 @@ public class PersonTest {
    @ParameterizedTest
     @MethodSource(value = "com.kodilla.parametrized_tests.homework.PersonSources#sourcesForPerson")
     public void bmiTest(double heightInMeters, double weightInKilogram, String status) {
-       Person person = new Person(heightInMeters, weightInKilogram, status);
+       Person person = new Person(heightInMeters, weightInKilogram);
        assertEquals(status, person.getBMI());
 
    }}
