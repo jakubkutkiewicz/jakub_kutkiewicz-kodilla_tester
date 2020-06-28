@@ -20,7 +20,12 @@ public class Shop {
                 .filter(u -> u.getDate().isAfter(startDate) && u.getDate().isBefore(endDate))
                 .collect(Collectors.toList());
     }
-
+    public List<Order> getOrdersBetween(int min, int max){
+        return orderList
+                .stream()
+                .filter(u->u.getPriceOrder()>=min && u.getPriceOrder() <=max)
+                .collect(Collectors.toList());
+    }
 
     //najmniejsza wartość zamówienia
     public double getLowerOrderPrice() {

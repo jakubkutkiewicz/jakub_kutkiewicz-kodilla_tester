@@ -44,6 +44,12 @@ public class ShopTest {
         System.out.println();
     }//jak wyswietlic zamównienia z tego zakresu dat ?
 
+    @Test
+    public void orderPriceB2win() {
+        double b2win = shop.getOrdersBetween(10, 20).size();
+        assertEquals(1,b2win);
+    }
+
 
     @Test
     public void lowerOrder() {
