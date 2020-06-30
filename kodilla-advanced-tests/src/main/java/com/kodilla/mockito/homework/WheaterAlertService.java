@@ -24,9 +24,9 @@ public class WheaterAlertService {
         }
     }
 
-    public void removeAllSubscribers(Person person) {
-        if (persons.containsKey(person)) {
-            persons.remove(person);
+    public void removeAllSubscribers(String postion) {
+        if (persons.containsKey(postion)) {
+            persons.get(postion).remove(persons);
 
 
         }

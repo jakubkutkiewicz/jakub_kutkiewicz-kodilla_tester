@@ -1,5 +1,6 @@
 package com.kodilla.mockito.homework;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -44,7 +45,7 @@ public class WheaterAlertTestSuite {
         wheaterAlertService.sendNotification(notification, "Katowice");
         wheaterAlertService.addSubscriber("Katowice", person);
 
-        wheaterAlertService.removeAllSubscribers(person);
+        wheaterAlertService.removeAllSubscribers("Katowice");
         Mockito.verify(person, Mockito.never()).receive(notification);
     }
 
@@ -103,6 +104,8 @@ public class WheaterAlertTestSuite {
 
 
         wheaterAlertService.removePosition("Katowice");
+        Mockito.verify(person1, Mockito.never()).receive(notification);
+        Mockito.verify(person3, Mockito.never()).receive(notification);
 
     }
 }
