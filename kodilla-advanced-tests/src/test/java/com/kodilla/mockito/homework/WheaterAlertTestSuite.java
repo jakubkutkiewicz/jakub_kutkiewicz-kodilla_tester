@@ -45,7 +45,7 @@ public class WheaterAlertTestSuite {
         wheaterAlertService.sendNotification(notification, "Katowice");
         wheaterAlertService.addSubscriber("Katowice", person);
 
-        wheaterAlertService.removeAllSubscribers("Katowice");
+        wheaterAlertService.removeAllSubscribers(person);
         Mockito.verify(person, Mockito.never()).receive(notification);
     }
 

@@ -18,19 +18,17 @@ public class WheaterAlertService {
         }
     }
 
-    public void removeSubscriber(String postion, Person person) {
-        if (persons.containsKey(postion)) {
-            persons.get(postion).remove(person);
+    public void removeSubscriber(String position, Person person) {
+        if (persons.containsKey(position)) {
+            persons.get(position).remove(person);
         }
     }
 
-    public void removeAllSubscribers(String postion) {
-        if (persons.containsKey(postion)) {
-            persons.get(postion).remove(persons);
-
-
-        }
+    public void removeAllSubscribers(Person person) {
+        for(List<Person> listOfPersons : persons.values()) {
+            listOfPersons.remove(person);
     }
+}
 
     public void sendNotification(Notification notification, String location) {
         if (persons.containsKey(location)) {
@@ -46,10 +44,8 @@ public class WheaterAlertService {
 
     }
 
-
     public void removePosition(String position) {
-        persons.remove(position).stream()
-                .forEach(entry -> persons.remove(position));
+        persons.remove(position);
 
     }
 
