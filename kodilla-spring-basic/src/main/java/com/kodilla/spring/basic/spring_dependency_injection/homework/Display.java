@@ -1,8 +1,9 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Component;
 
-@SpringBootApplication
+@Component
 public class Display {
 
 

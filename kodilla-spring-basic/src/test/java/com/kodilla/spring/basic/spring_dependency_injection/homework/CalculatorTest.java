@@ -26,18 +26,21 @@ class CalculatorTest {
         Assertions.assertEquals(5, 5);
 
     }
+
     @Test
-    public void checkMultiply(){
+    public void checkMultiply() {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_dependency_injection");
         Calculator bean = context.getBean(Calculator.class);
-        double multiply = bean.multiply(2,2);
-        Assertions.assertEquals(4,4);
+        double multiply = bean.multiply(2, 2);
+        Assertions.assertEquals(4, 4);
     }
+
     @Test
-    public void checkDivide(){
+    public void checkDivide() {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic.spring_dependency_injection");
         Calculator bean = context.getBean(Calculator.class);
-        double divide = bean.divide(2,2);
-        Assertions.assertEquals(1,1);
+        double divide = bean.divide(2, 2);
+        Assertions.assertEquals(1, 1);
     }
+
 }
