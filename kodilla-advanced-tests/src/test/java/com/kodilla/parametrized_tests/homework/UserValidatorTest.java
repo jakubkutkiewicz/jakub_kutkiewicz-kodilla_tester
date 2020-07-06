@@ -12,14 +12,14 @@ class UserValidatorTest {
     public UserValidator userValidator = new UserValidator();
 
     @ParameterizedTest
-    @ValueSource(strings = {"aa2", "ssss3", "sAA"})
+    @ValueSource(strings = {"ubb"})
     public void userValidator(String username) {
         boolean result = userValidator.validateUsername(username);
         assertTrue(result);
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"aa", "3", "aaa"})
+    @ValueSource(strings = {"aa", "3", "aaa300"})
     public void negativeUserValidator(String username) {
         boolean result = userValidator.validateUsername(username);
         assertFalse(result);

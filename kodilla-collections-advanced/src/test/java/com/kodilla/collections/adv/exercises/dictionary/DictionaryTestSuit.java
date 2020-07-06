@@ -35,19 +35,19 @@ class DictionaryTestSuit {
         expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "play"));
         expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "game"));
         assertEquals(expectedList, result);
-    }
+    }}
 
-    @Test
-    public void findEnglishWords_withPartofSpech() {
-        Dictionary dictionary = new Dictionary();
-        dictionary.addWord("stos", new EnglishWord(PartOfSpeech.NOUN, "stack"));
-        dictionary.addWord("brać", new EnglishWord(PartOfSpeech.NOUN, "brotherhood"));
-        dictionary.addWord("brać", new EnglishWord(PartOfSpeech.NOUN, "take"));
-        dictionary.addWord("grać", new EnglishWord(PartOfSpeech.NOUN, "play"));
-
-        List<EnglishWord> result =dictionary.findEnglishWords("brać",PartOfSpeech.NOUN);
-        List <EnglishWord> expectedList = new ArrayList<>();
-        expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "brotherhood"));
-        assertEquals(expectedList,result);
-    }
-}
+//    @Test
+//    public void findEnglishWords_withPartofSpech() {
+//        Dictionary dictionary = new Dictionary();
+//        dictionary.addWord("stos", new EnglishWord(PartOfSpeech.NOUN, "stack"));
+//        dictionary.addWord("brać", new EnglishWord(PartOfSpeech.NOUN, "brotherhood"));
+//        dictionary.addWord("brać", new EnglishWord(PartOfSpeech.NOUN, "take"));
+//        dictionary.addWord("grać", new EnglishWord(PartOfSpeech.NOUN, "play"));
+//
+//        List<EnglishWord> result =dictionary.findEnglishWords("brać",PartOfSpeech.NOUN);
+//        List <EnglishWord> expectedList = new ArrayList<>();
+//        expectedList.add(new EnglishWord(PartOfSpeech.NOUN, "brotherhood"));
+//        assertEquals(expectedList,result);
+//    }
+//}

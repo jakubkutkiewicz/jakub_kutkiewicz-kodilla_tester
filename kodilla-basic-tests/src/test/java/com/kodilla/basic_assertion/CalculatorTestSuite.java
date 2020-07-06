@@ -13,7 +13,7 @@ public class CalculatorTestSuite {
         int a = 5;
         int b = 8;
         int sumResult = calculator.dodawanie(a, b);
-        assertEquals(3, sumResult);
+        assertEquals(13, sumResult);
     }
 
     @Test
