@@ -1,5 +1,7 @@
 package com.kodilla.spring.basic;
 
+import com.kodilla.spring.basic.spring_dependency_injection.MessageService;
+
 public class SimpleApplication {
 
     private MessageService messageService;
