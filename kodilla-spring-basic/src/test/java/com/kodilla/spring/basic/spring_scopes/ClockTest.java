@@ -21,5 +21,10 @@ class ClockTest {
         Assertions.assertNotEquals(firstTime,secondTime);
         Assertions.assertNotEquals(secondTime,thirdTime);
         Assertions.assertNotEquals(firstTime,thirdTime);
+
+        System.out.println(firstTime);
+        System.out.println(secondTime);
+        System.out.println(thirdTime);
+        //czas dla wszystkich beanow jest taki sam
     }
 }
