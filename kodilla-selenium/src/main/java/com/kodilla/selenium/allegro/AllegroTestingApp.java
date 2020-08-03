@@ -33,6 +33,7 @@ public class AllegroTestingApp {
 //        WebElement txt = driver.findElement(By.cssSelector("#opbox-listing--base > div "));
         List<WebElement> elements = driver.findElements(By.cssSelector("#opbox-listing--base"));
         System.out.println(elements.get(0).getText());
+        elements.get(0).click();
 
     }
 }
