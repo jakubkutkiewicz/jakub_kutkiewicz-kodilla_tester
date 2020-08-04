@@ -21,10 +21,10 @@ public class TestGoogle {
         driver.navigate().to("http://www.google.com");
     }
 
-//    @After
-//    public void tearDown() {
-//        driver.close();
-//    }
+    @After
+    public void tearDown() {
+        driver.close();
+    }
 
     @Test
 
