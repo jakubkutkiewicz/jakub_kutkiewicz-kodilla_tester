@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.GoogleResults;
 import pages.GoogleSearch;
 
+import static pages.GoogleSearch.loadResults;
+
 public class TestGoogle {
     WebDriver driver;
 
@@ -32,9 +34,9 @@ public class TestGoogle {
 
     }
     @Test
-    public void testRandon(){
+    public void testRandom(){
         GoogleSearch googleSearch = new GoogleSearch(driver);
-        googleSearch.searchResults();
+        googleSearch.searchRandomLink();
 
     }
 

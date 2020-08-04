@@ -28,7 +28,7 @@ public class GoogleSearch extends AbstractPage {
         inputField.sendKeys("Kodilla");
         googleResults = loadResults(driver);
         googleResults.iSeeResults();
-        googleResults.clickRandomLink();
+
 
 
     }
@@ -38,9 +38,12 @@ public class GoogleSearch extends AbstractPage {
         wait.until(ExpectedConditions.elementToBeClickable(searchButton.get(0))).click();
         GoogleResults googleResults = new GoogleResults(driver);
         return googleResults;
-
-
-
+    }
+        public void searchRandomLink() {
+            PageFactory.initElements(driver, GoogleSearch.class);
+            inputField.sendKeys("Kodilla");
+            googleResults = loadResults(driver);
+            googleResults.clickRandomLink();
     }
 }
 
