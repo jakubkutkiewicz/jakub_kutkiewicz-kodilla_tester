@@ -10,6 +10,9 @@ public class WalletSteps implements En {
 
     public WalletSteps() {
 
+////// 1 schema
+
+
         Given("I have deposited $200 in my wallet", () -> {
             wallet.deposit(200);
             Assert.assertEquals("Incorrect wallet balance", 200, wallet.getBalance());
@@ -28,6 +31,8 @@ public class WalletSteps implements En {
         });
 
 
+        /////// 2 schema
+
         Given("I have deposited -$200 in my wallet", () -> {
             wallet.deposit(-200);
         });
@@ -41,6 +46,7 @@ public class WalletSteps implements En {
             Assert.assertEquals(0, cashSlot.getContents());
         });
 
+        ///// 3 schema
 
         Given("have deposited $50 in my wallet", () -> {
             wallet.deposit(50);
@@ -60,6 +66,7 @@ public class WalletSteps implements En {
             Assert.assertEquals("I don't have enough money in my wallet", 0, cashSlot.getContents());
         });
 
+///// schema
 
         Given("have deposited $200 in my wallet", () -> {
             wallet.deposit(200);
@@ -67,7 +74,7 @@ public class WalletSteps implements En {
 
         When("request $200", () -> {
             Cashier cashier = new Cashier(cashSlot);
-            cashier.withdraw(wallet,200);
+            cashier.withdraw(wallet, 200);
         });
 
         Then("$200 should be dispensed", () -> {
